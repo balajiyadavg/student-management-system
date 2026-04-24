@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System</title>
+  <style>
+    body { font-family: Arial; text-align: center; }
+    input { margin: 5px; padding: 8px; }
+    table { margin: 20px auto; border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 10px; }
+    button { padding: 5px 10px; }
+  </style>
+</head>
+<body>
+
+<h2>Student Management System</h2>
+
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="roll" placeholder="Roll No">
+<input type="text" id="dept" placeholder="Department">
+<button onclick="addStudent()">Add Student</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Roll No</th>
+      <th>Department</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+function addStudent() {
+  let name = document.getElementById("name").value;
+  let roll = document.getElementById("roll").value;
+  let dept = document.getElementById("dept").value;
+
+  if(name === "" || roll === "" || dept === "") {
+    alert("Fill all fields");
+    return;
+  }
+
+  let table = document.getElementById("tableBody");
+  let row = table.insertRow();
+
+  row.innerHTML = `
+    <td>${name}</td>
+    <td>${roll}</td>
+    <td>${dept}</td>
+    <td><button onclick="deleteRow(this)">Delete</button></td>
+  `;
+
+  document.getElementById("name").value = "";
+  document.getElementById("roll").value = "";
+  document.getElementById("dept").value = "";
+}
+
+function deleteRow(btn) {
+  btn.parentElement.parentElement.remove();
+}
+</script>
+
+</body>
+</html>
