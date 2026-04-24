@@ -19,4 +19,4 @@ This project allows users to add, view, and delete student details.
 Open index.html in browser.
 
 ## Demo
-(https://drive.google.com/file/d/1nhEqSr4B-PvDduzsVMWS7KA17JV0JLiH/view?usp=drivesdk)
+(https://drive.google.com/file/d/1aoR0urjaizFGv_DFKJ3GA8dzN2JWy5Y-/view?usp=drivesdk)
